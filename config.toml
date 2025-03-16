@@ -2,7 +2,7 @@
 
 # this variable has to be set but it is not used
 # inside the templates (end in '/')
-base_url = "https://coderefinery.github.io/template-workshop-webpage/"
+base_url = "https://darrenwong.github.io/test_webpage/"
 
 # When adapting the title, do not forget to also adjust base_url above
 title = "Replace this title in config.toml"
@@ -52,7 +52,7 @@ logos = [
 
 # adapt this
 registration_link = "https://example.org"
-source_repo = "https://github.com/coderefinery/template-workshop-webpage"
+source_repo = "https://darrenwong.github.io/test_webpage"
 how_to_join_video = "https://youtu.be/QUAZELOioUY"
 
 # uncomment as soon as registration opens
