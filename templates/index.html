@@ -3,35 +3,77 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="uk-margin-bottom" uk-grid>
-    <div class="uk-width-expand@m">
-      <h1>{{ config.title }}</h1>
-    </div>
-    <div class="uk-width-1-4@m">
-      <div class="uk-align-right">
-        {% include "logos.html" %}
+  {% set image = resize_image(path="header_tighter.png", width=1200, op="fit_width") %}
+  <div class="uk-height-medium uk-flex  uk-flex-bottom uk-flex-right uk-background-cover uk-light " data-src="{{ image.url }}" uk-img>
+    <div class="uk-width-auto">
+      <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2025-10-19T12:45:00+00:00">
+          <div>
+              <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-hours"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-minutes"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-seconds"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+          </div>
       </div>
     </div>
-  </div>
 
-  <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-large-bottom">
+  </div>
+  <p></p>
+  <div class="uk-margin-bottom" uk-grid>
+    <div class="uk-width-expand@m">
+      <h1><b>{{ config.title }}</h1>
+      <h3 class="uk-align-right">Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics</h3>
+    </div>
+  </div>
+  <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-bottom">
     <div uk-grid>
       <div class="uk-width-expand@m">
         {% include "news.html" %}
       </div>
-      <div class="uk-width-expand@m">
+      <!--div class="uk-width-expand@m">
         {% include "links.html" %}
-      </div>
+      </div-->
     </div>
   </div>
 
-  <div uk-grid>
+
+  <div class="uk-width-1-1@m">
+      {% include "01_scope.html" %}
+  </div>
+  <hr class="uk-divider-icon">
+  <div class="uk-width-1-1@m">
+    {% include "02_speakers.html" %}
+  </div>
+  <hr class="uk-divider-icon">
+  <!--div class="uk-width-1-1@m">
+      {% include "04_registration.html" %}
+  </div-->
+
+  <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
     <div class="uk-width-1-2@m">
-      {% include "registration.html" %}
-      {% include "schedule.html" %}
+      {% include "05_schedule.html" %}
     </div>
     <div class="uk-width-1-2@m">
-      {{ section.content | safe }}
+      {% include "06_organization.html" %}
     </div>
   </div>
+
+  <hr class="uk-divider-icon">
+
+  <div class="uk-width-1-1@m">
+      {% include "03_organizers.html" %}
+  </div>
+
 {% endblock content %}
