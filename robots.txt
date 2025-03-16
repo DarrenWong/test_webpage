@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://darrenwong.github.io/test_webpage/sitemap.xml
